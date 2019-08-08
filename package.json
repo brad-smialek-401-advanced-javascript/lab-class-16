@@ -1,0 +1,26 @@
+{
+  "name": "events-lab",
+  "version": "1.0.0",
+  "description": "Events Lab",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint **/*.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "Brad Smialek",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.6.0",
+    "jsdoc": "^3.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brad-smialek-401-advanced-javascript/lab-class-16.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brad-smialek-401-advanced-javascript/lab-class-16/issues"
+  },
+  "homepage": "https://github.com/brad-smialek-401-advanced-javascript/lab-class-16#readme"
+}
