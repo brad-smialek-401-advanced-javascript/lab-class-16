@@ -1,29 +1,19 @@
 'use strict';
 
 
-//logger is listening for event.on
+const event = require('./event.js');
 
-// const event = require('./event.js');
-
-
-
-
-// events.on('create', payload => doLog('create', payload));
-// events.on('delete', payload => doLog('delete', payload));
-
-// event.on('err', payload => logErr('err', payload));
+event.on('err', payload => doLog('err', payload));
+event.on('success', payload => doLog('success', payload));
 
 
-// function doLog(action, payload) {
-//   console.log( action.toUpperCase(), payload );
-
-
-// }
-
-// function doLog(action, payload) {
-//   console.log( action.toUpperCase(), payload );
-
-  
-// }
-
-// console.log(`${file} saved`);
+/**
+ *doLog sends an uppercase message of the action, along with the payload to console
+ *
+ * @param {*} action
+ * @param {*} payload
+ */
+function doLog(action, payload){
+    let message = `${action.toUpperCase()}`;
+    console.log(message, payload);
+  };

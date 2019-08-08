@@ -1,8 +1,8 @@
 'use strict';
 
-//what is 'events ??
-// const Ievent = require('events');
+// what is 'events ??
+const Ievent = require('events');
 
-// const event = new Ievent();
+const event = new Ievent();
 
-// module.exports = event;
+module.exports = event;
