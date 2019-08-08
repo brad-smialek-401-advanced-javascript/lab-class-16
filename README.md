@@ -6,8 +6,8 @@ event driven “smart app”
 ### Author: Brad Smialek
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis]()
+* [submission PR](https://github.com/brad-smialek-401-advanced-javascript/lab-class-16)
+* [travis]([![Build Status](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/lab-class-16.svg?branch=master)](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/lab-class-16))
 
 
 #### Documentation
