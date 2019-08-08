@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: logger.js</title>
+    <title>JSDoc: Source: app.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: logger.js</h1>
+    <h1 class="page-title">Source: app.js</h1>
 
     
 
@@ -29,22 +29,46 @@
             <pre class="prettyprint source linenums"><code>'use strict';
 
 
-const event = require('./event.js');
+// emit is what boroadcast in app or index
 
-event.on('err', payload => doLog('err', payload));
-event.on('success', payload => doLog('success', payload));
+const fs = require('fs');
+const event = require('./event.js');
+require('./logger.js');
+
 
 
 /**
- *doLog sends an uppercase message of the action, along with the payload to console
+ *alterFile is function that reads and writes to a file
  *
- * @param {*} action
- * @param {*} payload
+ * @param {*} file
  */
-function doLog(action, payload){
-    let message = `${action.toUpperCase()}`;
-    console.log(message, payload);
-  };</code></pre>
+const /**
+ *
+ *uses fs to read file, takes data converts to string and then uppercases string
+ * @param {*} err
+ * @param {*} data
+ */
+alterFile = (file) => {
+  fs.readFile( file, (err, data) => {
+    if(err) { event.emit('err', err); };
+    let text = data.toString().toUpperCase();
+
+    fs.writeFile( file, Buffer.from(text), (err, data) => {
+      if(err) { event.emit('err', err); };
+      
+      event.emit('success', `${file} was saved successfully!`)
+      
+    });
+  });
+};
+
+
+// gets argv slices first two elements and shift returns file out of array
+let file = process.argv.slice(2).shift();
+
+
+alterFile(file);
+</code></pre>
         </article>
     </section>
 
