@@ -17,3 +17,5 @@ function doLog(action, payload){
     let message = `${action.toUpperCase()}`;
     console.log(message, payload);
   };
+
+  
